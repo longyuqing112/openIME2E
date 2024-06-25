@@ -54,8 +54,8 @@ class RegisterPage(BasePage):
             error_message_text = error_message_element.text
 
             if "手机号已注册" in error_message_text:
-                print("Mobile phone number has been registered,Please change your number")
-                return "Mobile phone number has been registered"
+                print("手机号已注册，请换号码")
+                return "手机号已注册"
 
         except TimeoutException:
             # No error message found, continue trying to fill in the captcha.
@@ -70,14 +70,14 @@ class RegisterPage(BasePage):
             for index, element in enumerate(verification_code_elements):
                 element.send_keys(verification_code[index])
         except TimeoutException:
-            return "The verification code input box does not appear"
+            return "验证码输入框未出现"
          # Check if the error message "Incorrect verification code" appears.
         try:
             error_message_locator = (By.XPATH, '/html/body/div[2]/div/div/div/div/span[2]')
             error_message_element = self.wait.until(EC.visibility_of_element_located(error_message_locator))
             error_message_text = error_message_element.text
             if "验证码错误" in error_message_text:
-                return "Verification code error"
+                return "验证码错误"
         except TimeoutException:
             pass
 
@@ -92,7 +92,7 @@ class RegisterPage(BasePage):
             try:
                 WebDriverWait(self.driver, 10).until(EC.url_to_be(expected_url))
                 save_registered_account(phoneNumber, password,nickname)
-                return "registration success"
+                return "注册成功"
 
             except  TimeoutException:
                 return f"Expecting redirection to. {expected_url}，But failed to redirect. Current URL: {self.driver.current_url}"
