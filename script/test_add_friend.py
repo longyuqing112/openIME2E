@@ -76,4 +76,3 @@ def test_agree_friends(driver, login):
         assert text == "已同意", "断言失败：文本内容不是 '已同意'"
     else:
         assert False, "没有可用的注册账号来进行同意好友申请的测试"
-
