@@ -40,6 +40,7 @@ class AddFriendPage(BasePage):
         # In your profile, click Add Friend
         self.base_click(Locators.add_friend_info_loc)
         # Enter the verification information
+
         self.enter_text(Locators.send_info_loc, greeting_message)
         # Click Confirm sending
         self.base_click(Locators.end_confirm_loc)

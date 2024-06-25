@@ -34,6 +34,7 @@ class BasePage:
     # 输入方法
     def enter_text(self,loc,value):
         # 获取元素(找到这个元素)
+        time.sleep(2)
         el = self.wait.until(EC.visibility_of_element_located(loc))
         # 清空操作
         el.clear()

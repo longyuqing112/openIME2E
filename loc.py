@@ -18,8 +18,11 @@ class Locators:
     # Profile "Send Message"
     send_strange_info_loc = (By.CSS_SELECTOR, 'button.ant-btn.ant-btn-primary.flex-1:nth-of-type(2)')
     # Send verification content to friend
+    # send_info_loc = (
+    # By.CSS_SELECTOR, 'textarea.ant-input.css-1f72xif')
+
     send_info_loc = (
-    By.CSS_SELECTOR, 'textarea.ant-input.css-1f72xif')
+    By.XPATH, '/html/body/div[5]/div/div[2]/div/div[2]/div/div/div/div/div/div/div[2]/div[2]/div[2]/span/textarea')
     # Confirm sending
     end_confirm_loc = (By.CSS_SELECTOR, 'button.ant-btn.ant-btn-primary.flex-1')
     tip_msg_loc = (By.XPATH, '/html/body/div[4]/div/div/div/div')
