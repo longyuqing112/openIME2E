@@ -80,3 +80,6 @@ class AddFriendPage(BasePage):
             print(f"{addfriend_nickname}申请不存在。")
         self.base_click(Locators.agree)
         time.sleep(2)
+
+
+
